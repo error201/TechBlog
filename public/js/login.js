@@ -2,8 +2,8 @@ document.querySelector("#login-form").addEventListener("submit", e => {
     // Prevent default behavior.
     e.preventDefault();
     const loginObj = {
-        username: document.querySelector("#loginUsername").value,
-        password: document.querySelector("#loginPassword").value
+        username: document.querySelector("#username").value,
+        password: document.querySelector("#password").value
     }
     fetch("/api/users/login", {
         method: "POST",

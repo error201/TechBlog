@@ -2,14 +2,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-header, footer {
+header{
+    font-size: 2em;
     height: 10vh;
-    background: #B8DBD9;
+    background: #c1c2c2;
     display: flex;
     justify-content: space-around;
+    border: 1px black solid;
 }
 
 main {
@@ -26,10 +28,13 @@ main {
 
 .comment-box{
     background: #586F7C;
-    color: whitesmoke;
+    color: white;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    border: 1px black solid;
+    box-shadow: 2px 2px #2c3e50;
+    padding: 5px;
 }
 
 .bold{
@@ -43,14 +48,20 @@ main {
     margin-right: auto;
 } 
 
-a:link {
+a {
     text-decoration: none;
-    background-color: #E0B0D5 ;
+    background-color: #34495e ;
     margin-block: 17pt;
+    border: 2px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 3px 3px #2c3e50;
+    color: white;
 }
 
 a:hover{
-    background-color: #D85EBC ;
+    background-color: white;
+    color:#34495e
 }
 
 /* accent color Pink Lavender #E0B0D5 */
