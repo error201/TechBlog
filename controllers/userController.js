@@ -3,7 +3,8 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const { User, Comment } = require("../models");
 
-// get all users.
+
+// Get all users.
 router.get("/", (req, res) => {
     User.findAll()
         .then((userData) => {
@@ -11,17 +12,19 @@ router.get("/", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with getting all user data", err });
+            res.status(500).json({ msg: "Problem with getting all Users' data", err });
         });
 });
 
-// logout controller
+
+// logout.
 router.get("/logout", (req, res) => {
     req.session.destroy()
     res.redirect("/logout")
 });
 
-// get one user's info and comments
+
+// Get a single user by ID.
 router.get("/:id", (req, res) => {
     User.findByPk(req.params.id, {
         include: [Comment],
@@ -31,11 +34,12 @@ router.get("/:id", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with getting all user data", err });
+            res.status(500).json({ msg: "Problem with retrieving this User's data.", err });
         });
 });
 
-// create a user
+
+// Create a user.
 router.post("/", (req, res) => {
     User.create({
         username: req.body.username,
@@ -48,11 +52,12 @@ router.post("/", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with creating a user", err });
+            res.status(500).json({ msg: "Problem with creating a User.", err });
         });
 });
 
-// User login
+
+// Login.
 router.post("/login", (req, res) => {
     User.findOne({
         where: {
@@ -77,7 +82,6 @@ router.post("/login", (req, res) => {
             res.status(500).json({ msg: "Problem with creating a user", err });
         });
 });
-
 
 
 module.exports = router;
