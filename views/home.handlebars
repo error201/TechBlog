@@ -1,0 +1,10 @@
+<h1>Homepage</h1>
+<br>
+<h2>Blog Comments:</h2>
+<br>
+    {{#each allComments}}
+    <section class="comment-box">
+    <p class="italic">{{User.username}} commented:</p>
+    <h4>"{{comment}}"</h4>
+    </section> <br>
+    {{/each}}

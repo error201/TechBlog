@@ -1,0 +1,15 @@
+<h1>Welcome back, {{username}}!</h1>
+<br>
+<h2>Create a comment:</h2> <br>
+<form id="new-comment-form">
+    <textarea class="bold" id="comment-input"></textarea>
+    <button class="bold">Comment!</button>
+</form> <br>
+<h2>My Comments:</h2> <br>
+{{#each Comments}}
+    <section class="comment-box">
+    <p> {{comment}}</p>
+</section> <br>
+{{/each}}
+
+<script src="/js/profile.js"></script>

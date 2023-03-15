@@ -1,24 +1,22 @@
 {
-  "name": "techblog",
+  "name": "lesson-14-tech-blog",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "```\r This project is to build a blog site where people can publish blog posts and comment on other people's posts. \r ```",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/error201/TechBlog.git"
+    "url": "git+https://github.com/Kawaikimono/Lesson-14-Tech-Blog.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/error201/TechBlog/issues"
+    "url": "https://github.com/Kawaikimono/Lesson-14-Tech-Blog/issues"
   },
-  "homepage": "https://github.com/error201/TechBlog#readme",
+  "homepage": "https://github.com/Kawaikimono/Lesson-14-Tech-Blog#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",

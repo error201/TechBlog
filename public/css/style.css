@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+header, footer {
+    height: 10vh;
+    background: #B8DBD9;
+    display: flex;
+    justify-content: space-around;
+}
+
+main {
+    min-height: 80vh;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.comment-box{
+    background: #586F7C;
+    color: whitesmoke;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+#login-form, #signup-form{
+    display: grid;
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+a:link {
+    text-decoration: none;
+    background-color: #E0B0D5 ;
+    margin-block: 17pt;
+}
+
+a:hover{
+    background-color: #D85EBC ;
+}
+
+/* accent color Pink Lavender #E0B0D5 */
