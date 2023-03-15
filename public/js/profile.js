@@ -1,4 +1,5 @@
-document.querySelector("#new-comment-form").addEventListener("submit", e => {
+document.querySelector("#comment-form").addEventListener("submit", e => {
+    // Prevent default behavior.
     e.preventDefault();
     const commentObj = {
         comment: document.querySelector("#comment-input").value
@@ -13,7 +14,7 @@ document.querySelector("#new-comment-form").addEventListener("submit", e => {
         if (res.ok) {
             location.reload()
         } else {
-            alert("There was an error making your comment")
+            alert("An error occurred while creating your comment.")
         }
     })
-})
+});

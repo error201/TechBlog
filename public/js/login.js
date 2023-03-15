@@ -1,10 +1,10 @@
 document.querySelector("#login-form").addEventListener("submit", e => {
+    // Prevent default behavior.
     e.preventDefault();
     const loginObj = {
         username: document.querySelector("#loginUsername").value,
         password: document.querySelector("#loginPassword").value
     }
-    console.log(loginObj)
     fetch("/api/users/login", {
         method: "POST",
         body: JSON.stringify(loginObj),
@@ -18,4 +18,4 @@ document.querySelector("#login-form").addEventListener("submit", e => {
             alert("Invalid Login")
         }
     })
-})
+});
