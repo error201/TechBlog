@@ -1,6 +1,6 @@
 const express = require("express");
-const router = express.Router();
 const bcrypt = require("bcrypt");
+const router = express.Router();
 const { User, Comment } = require("../models");
 
 
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with getting all Users' data", err });
+            res.status(500).json({ msg: "Problem with getting all Users' data" });
         });
 });
 
@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with retrieving this User's data.", err });
+            res.status(500).json({ msg: "Problem with retrieving this User's data." });
         });
 });
 
@@ -52,7 +52,7 @@ router.post("/", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with creating a User.", err });
+            res.status(500).json({ msg: "Problem with creating a User." });
         });
 });
 
@@ -66,20 +66,20 @@ router.post("/login", (req, res) => {
     })
         .then((userData) => {
             if (!userData) {
-                return res.status(401).json({ msg: "incorrect username/password combo" });
+                return res.status(401).json({ msg: "Incorrect username or password." });
             } else {
                 if (bcrypt.compareSync(req.body.password, userData.password)) {
                     req.session.userId = userData.id;
                     req.session.username = userData.username;
                     return res.json(userData);
                 } else {
-                    return res.status(401).json({ msg: "incorrect username/password combo" });
+                    return res.status(401).json({ msg: "Incorrect username or password." });
                 }
             }
         })
         .catch((err) => {
             console.log(err);
-            res.status(500).json({ msg: "Problem with creating a user", err });
+            res.status(500).json({ msg: "Could not create user" });
         });
 });
 

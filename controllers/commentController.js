@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ msg: "Could not retrieve comments.", err });
+      res.status(500).json({ msg: "Could not retrieve comments." });
     });
 });
 
@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ msg: "Could not retrieve comment.", err });
+      res.status(500).json({ msg: "Could not retrieve comment." });
     });
 });
 
@@ -36,7 +36,7 @@ router.post("/", (req, res) => {
   if (!req.session.userId) {
     return res
       .status(401)
-      .json({ msg: "You must be logged in to create a comment.", err });
+      .json({ msg: "You must be logged in to create a comment." });
   }
   Comment.create({
     comment: req.body.comment,
@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json({ msg: "Could not create comment", err });
+      res.status(500).json({ msg: "Could not create comment" });
     });
 });
 
@@ -57,13 +57,13 @@ router.delete("/:id", (req, res) => {
   if (!req.session.userId) {
     return res
       .status(403)
-      .json({ msg: "You must be logged in to delete a comment.", err });
+      .json({ msg: "You must be logged in to delete a comment." });
   }
   Comment.findByPk(req.params.id).then((commentData) => {
     if (!commentData) {
       return res.status(404).json({ msg: "No comment found." });
     } else if (commentData.UserId!== req.session.userId) {
-      return res.status(403).json({ msg: "You can not delete this comment." });
+      return res.status(403).json({ msg: "Not authorized to delete comment." });
     }
     Comment.destroy({
       where: {
@@ -75,7 +75,7 @@ router.delete("/:id", (req, res) => {
       })
       .catch((err) => {
         console.log(err);
-        res.status(500).json({ msg: "Could not delete comment.", err });
+        res.status(500).json({ msg: "Could not delete comment." });
       });
   });
 });

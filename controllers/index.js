@@ -10,7 +10,7 @@ const commentRoutes = require('./commentController')
 router.use("/api/comments", commentRoutes);
 
 // frontend routes
-const FrontEndRoutes = require('./frontEndController')
-router.use("/", FrontEndRoutes);
+const loginRoutes = require('./loginController')
+router.use("/", loginRoutes);
 
 module.exports = router;

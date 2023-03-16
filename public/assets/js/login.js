@@ -1,13 +1,13 @@
-document.querySelector("#login-form").addEventListener("submit", e => {
+document.querySelector("#login-form").addEventListener("submit", function(e) {
     // Prevent default behavior.
     e.preventDefault();
-    const loginObj = {
+    const login = {
         username: document.querySelector("#username").value,
         password: document.querySelector("#password").value
     }
     fetch("/api/users/login", {
         method: "POST",
-        body: JSON.stringify(loginObj),
+        body: JSON.stringify(login),
         headers: {
             "Content-Type": "application/json"
         }
@@ -15,7 +15,7 @@ document.querySelector("#login-form").addEventListener("submit", e => {
         if (res.ok) {
             location.href = "/profile"
         } else {
-            alert("Invalid Login")
+            alert("Username or password is incorrect.")
         }
     })
 });

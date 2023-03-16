@@ -11,17 +11,15 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Sets up the Express App
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 // Requiring models for synching.
 const { User, Comment} = require("./models")
 
-// Session.
+// Session. Cookies and such.
 const sess = {
   secret: process.env.SESSION_SECRET,
-  cookie: {
-      maxAge:1000*60*60*2
-  },
+  cookie: {maxAge:1000*60*60},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -49,6 +47,6 @@ app.get("/sessions", (req,res) => {
 // Synch the database and start the server!
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
-    console.log("App is up and listening on PORT " + PORT);
+    console.log("Server is up and listening on PORT " + PORT);
   });
 });

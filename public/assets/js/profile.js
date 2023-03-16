@@ -1,8 +1,9 @@
 document.querySelector("#comment-form").addEventListener("submit", e => {
+    
     // Prevent default behavior.
     e.preventDefault();
     const commentObj = {
-        comment: document.querySelector("#comment-input").value
+        comment: document.querySelector("#comment-text").value
     }
     fetch("/api/comments", {
         method: "POST",

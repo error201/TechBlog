@@ -1,10 +1,9 @@
-<h1>Homepage</h1>
-<br>
+<h1>Home</h1>
 <h2>All comments:</h2>
-<br>
-    {{#each allComments}}
-    <section class="comment-box">
-    <p class="italic">{{User.username}} said:</p>
-    <h4>"{{comment}}"</h4>
-    </section> <br>
-    {{/each}}
+{{#each allComments}}
+<section class="comment-card">
+    <p class="emphasis">{{User.username}} said:</p>
+    <br>
+    <h3>`{{comment}}`</h3>
+</section> <br>
+{{/each}}

@@ -2,12 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
-    font-size: 2em;
-    height: 10vh;
+    font-size: 1.5em;
+    height: auto;
     background: #c1c2c2;
     display: flex;
     justify-content: space-around;
@@ -22,41 +22,52 @@ main {
     text-align: center;
 }
 
-.italic{
-    font-style: italic;
+.emphasis{
+    font-size: 1.75em;
+    font-weight: bold;
+    text-decoration-line:underline;
+    text-decoration-style: dotted;
 }
 
-.comment-box{
+.comment-card{
     background: #586F7C;
     color: white;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 5px auto 5px auto;
     border: 1px black solid;
     box-shadow: 2px 2px #2c3e50;
-    padding: 5px;
+    padding: 10px;
 }
 
 .bold{
     font-weight: bold;
 }
 
-#login-form, #signup-form{
+#login-form{
     display: grid;
-    width:30%;
     margin-left: auto;
     margin-right: auto;
+    width:30%;
+} 
+
+#signup-form{
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width:30%;
 } 
 
 a {
+    text-align: center;
     text-decoration: none;
     background-color: #34495e ;
     margin-block: 17pt;
     border: 2px black solid;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 5px;
     box-shadow: 3px 3px #2c3e50;
     color: white;
+    width: 110px
 }
 
 a:hover{
@@ -64,4 +75,9 @@ a:hover{
     color:#34495e
 }
 
-/* accent color Pink Lavender #E0B0D5 */
+#comment-text{
+    width:20vw;
+    height:20vh;
+    padding: 10px;
+    margin:10px;
+}

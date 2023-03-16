@@ -1,14 +1,21 @@
 <h1>Hello, {{username}}!</h1>
 <h2>Create a comment:</h2> <br>
 <form id="comment-form">
-    <textarea class="bold" id="comment-input"></textarea>
-    <button class="bold">Submit</button>
+    <textarea id="comment-text"></textarea>
+    <br>
+    <input type="submit" value="Submit">
 </form> <br>
-<h2>My Comments:</h2> <br>
+<h2>
+    My Comments:
+</h2>
+<br>
 {{#each Comments}}
-    <section class="comment-box">
-    <p> {{comment}}</p>
-</section> <br>
+<section class="comment-card">
+    <p>
+        {{comment}}
+    </p>
+</section>
+<br>
 {{/each}}
 
-<script src="/js/profile.js"></script>
+<script src="/assets/js/profile.js"></script>
